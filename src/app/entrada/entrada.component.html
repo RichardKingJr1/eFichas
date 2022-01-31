@@ -1,0 +1,17 @@
+<div style="position: absolute;top: 0px;bottom: 0px;left:0px;right:0px;">
+    <h1 style="position: relative; text-align:center; top: 15px; font-weight: 580;">eFichas</h1>
+    <input placeholder="Nome" class="botaoHome" id="inputHome" type="text" [(ngModel)]="usuario">
+    <button  class="botaoHome" (click)="criarSala()">Criar Sala</button>
+    <button  class="botaoHome" (click)="entrarSala()">Entrar em Sala</button>
+
+    <div [hidden]="controle_sala" style="position: relative; width: 70%; left: 15%; top: -10%;">
+        <input class="subHome" style="display: block; width: 100%;" placeholder="Código" [(ngModel)]="codigo_sala"[(ngModel)]="codigo_sala" type="number">
+        <button class="subHome" (click)="logar()">Entrar</button>
+        <button class="subHome" (click)="cancelarSala()">Cancelar</button>
+    </div>
+
+    <div id=espera *ngIf=ctrl_espera>
+        <h2>Carregando</h2>
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+<!--<table>
+    <tr>
+        <td>Quantia Inicial</td>
+        <td><input type="number" [(ngModel)]="quantia" placeholder="Quantia Inicial"></td>
+    </tr>
+    <tr>
+        <td>Blind</td>
+        <td><input type="number" [(ngModel)]="blind" placeholder="Blind Inicial"></td>
+    </tr>
+</table>-->
+<div class="container">
+    <h1 style="position: relative; text-align:center; top: 15px; font-weight: 580;">eFichas</h1>
+    <h1 style="position: relative; text-align:center; top: 25%; font-weight: 400;">Configurações</h1>
+
+    <input class="botaoHome" type="number" [(ngModel)]="quantia" placeholder="Quantia Inicial">
+    <input class="botaoHome" type="number" [(ngModel)]="blind" placeholder="Blind Inicial">
+</div>
+
+<div class="footer">
+    <button class="botaoFooter" routerLink="/entrada">Voltar</button>
+    <button class="botaoFooter" (click)="criarSala()">Avançar</button>
+</div>
+

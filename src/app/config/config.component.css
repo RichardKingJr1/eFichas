@@ -1,0 +1,68 @@
+button{
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+
+}
+
+input{
+    border: none;
+    background-color: #d9d9d9;
+    color: black;
+    border-radius: 10px;
+    padding: none;
+    text-indent: 10px;
+}
+
+
+.container{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left:0px;
+    right:0px;
+}
+
+.botaoConfig{
+    position: relative;
+    display: inline-block;
+    width: 34%;
+    max-width: 70%;
+    height: 45px;
+    left: 15%;
+    top: 85%;
+    margin: 10px 2% 0px 0px;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+
+    color: white;
+    text-align: center;
+}
+
+
+.botaoFooter{
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    margin: 10px 2%;
+    height: 45px;
+}
+
+
+.botaoHome{
+    position: relative;
+    display: block;
+    width: 70%;
+    max-width: 70%;
+    height: 45px;
+    left: 15%;
+    top: 25%;
+    margin: 10px 0px 0px 0px;
+}

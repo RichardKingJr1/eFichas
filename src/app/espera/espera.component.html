@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 style="position: relative; text-align:center; top: 15px; font-weight: 580;">eFichas</h1>
+    <h2 style="position: relative; text-align:center; top: 5px; font-weight: 400;">Sala {{sala}}</h2>
+ 
+
+    <table>
+        <div class="listaContainer">
+            <div *ngIf="resposta.us1" class="lista">{{resposta.us1}}</div>
+            <div *ngIf="resposta.us2" class="lista">{{resposta.us2}}</div>
+            <div *ngIf="resposta.us3" class="lista">{{resposta.us3}}</div>
+            <div *ngIf="resposta.us4" class="lista">{{resposta.us4}}</div>
+            <div *ngIf="resposta.us5" class="lista">{{resposta.us5}}</div>
+            <div *ngIf="resposta.us6" class="lista">{{resposta.us6}}</div>
+            <div *ngIf="resposta.us7" class="lista">{{resposta.us7}}</div>
+            <div *ngIf="resposta.us8" class="lista">{{resposta.us8}}</div>
+            <div *ngIf="resposta.us9" class="lista">{{resposta.us9}}</div>
+        </div>        
+    </table>
+
+    <div class="footer">
+        <div [hidden]="ctrlGerente">
+            <button class="botaoFooter" (click)="sairPartidaG()">Sair</button>
+            <button class="botaoFooter" (click)="iniciarPartida()">Começar Partida</button>
+        </div>
+    
+    
+        <div [hidden]="ctrlJogador">
+            <button class="botaoFooterUnico" (click)="sairPartidaJ()">Sair</button>
+        </div>
+    </div>
+    
+</div>

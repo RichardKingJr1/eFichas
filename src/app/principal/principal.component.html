@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="header">
+        <div class="header-component" style="font-weight: 500;">{{rodada}}</div>
+       <!-- <div class="header-component" style="right: 85px;">CONFIG </div>--> 
+        <div class="header-component" style="right: 45px;" (click)="sair()">SAIR </div>        
+    </div>
+    <div class="top">
+        <table>
+            <tr >
+                <td>nome</td>
+                <td>caixa</td>
+                <td>aposta</td>
+                <td>status</td>
+            </tr>
+            <tr *ngFor="let jogador of resposta.jogadores">
+                <td>{{jogador.nome}}</td>
+                <td>{{jogador.caixa}}</td>
+                <td>{{jogador.aposta}}</td>
+                <td>{{jogador.status}}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="mid-container">
+        <div class="mid">
+            <div>POTE</div>
+            <div>{{resposta.valor_mesa}}</div> 
+        </div>
+        <div  class="mid">
+            <div>BLIND</div>
+            <div>{{resposta.blind}}</div>
+        </div>
+        <div  class="mid" style="top: -11px"><button style="height: 30px; border-radius: 4px;" (click)="blind()">SUBIR BLIND</button></div>
+    </div>
+       
+
+    
+
+    <div class="footer">
+        <input class="botaoFooter" [disabled]="ctrlBotao" [(ngModel)]="quantia" >
+        <button class="botaoFooter" [disabled]="ctrlBotao" (click)="bet(quantia)" >APOSTAR</button>
+        <button class="botaoFooter" [disabled]="ctrlBotao" (click)="fold()">DESISTIR</button>
+        <span [hidden]="!ctrlBet"><button class="botaoFooter" [disabled]="ctrlBotao" (click)="check()">CHECK</button></span>
+        <span [hidden]="ctrlBet"><button class="botaoFooter" [disabled]="ctrlBotao" (click)="pay()">PAGAR</button></span>
+    </div>
+    
+    <div [hidden]="ctrlVencedor" >
+        <div style="position: fixed; background-color: rgba(10,10,10,0.7); width: 100%; height: 100%; top: 0px;" >
+            <table style="top: 50px">
+                <td><h3>vencedor</h3></td>
+                <tr *ngFor="let jogador_v of resposta.jogadores">
+                    <td [hidden]="!jogador_v.status"><div (click)="entregaPote(jogador_v.posicao)">{{jogador_v.nome}}</div></td>
+                </tr>
+            </table>
+        </div>    
+    </div>
+
+    <div [hidden]="ctrlBlind" style="position: fixed; width: 70%; top: 30%; left: 15%; height: 100px; background-color: #f1f1f1; box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2); transition: 0.2s;">
+        <input placeholder="Digite o Novo Blind" [(ngModel)]="valorBlind" style="position: absolute; width: 80%; height: 30px; top: 15px; left: 10%;">
+        <button (click)="blind()" style="position: absolute; width: 40%; left: 5%;  top: 65px; height: 25px;">Cancelar</button>
+        <button (click)="confirmarBlind()" style=" position: absolute; width: 40%; left: 55%;  top: 65px; height: 25px;">Ok</button>
+    </div>
+</div>
+
